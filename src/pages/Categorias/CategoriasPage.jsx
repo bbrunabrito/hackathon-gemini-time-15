@@ -21,6 +21,10 @@ function CategoriasPage() {
     setLoading(false);
   };
 
+  const ordenacao = [...categorias].sort((a, b) => 
+    a.name > b.name ? -1 : 1,
+  );
+
   useEffect(() => {
     getCategorias();
   }, []);
@@ -37,12 +41,13 @@ function CategoriasPage() {
       )}
 
       <Grid container spacing={1} className="gridContainer">
-        {categorias.map((categoria) => (
+        {ordenacao.map((categoria) => (
           <Grid item xs={4} key={categoria["ID"]}>
             <div
               className="containerCategorias"
               onClick={() => navigate(`/restaurantes/${categoria["ID"]}`)}
             >
+        
               <img
                 src={categoria.image + ".png"}
                 alt={categoria.name}
