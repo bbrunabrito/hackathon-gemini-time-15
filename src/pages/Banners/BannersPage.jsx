@@ -22,7 +22,11 @@ function BannersPage() {
 
   const getBanners = async () => {
     const result = await getAllBanners();
-    setListaBanners(result.data);
+    setListaBanners(
+      result.data.filter((banner) => {
+        return !banner.nome.includes("UNTER");
+      })
+    );
     setLoading(false);
   };
 
