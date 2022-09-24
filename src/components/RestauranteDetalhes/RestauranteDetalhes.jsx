@@ -5,6 +5,7 @@ import React from 'react';
 function RestauranteDetalhes(props) {
     let valor_entrega = props.valor_entrega;
     if(props.valor_entrega === 0) valor_entrega = "Grátis";
+    else valor_entrega = "R$" + props.valor_entrega;
     return (
         <div className='details-container'>
             <div className='principal-info'>
