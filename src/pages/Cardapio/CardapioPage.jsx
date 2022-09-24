@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { getDetalhes } from "../../services/detalhes.service";
+import "./styles.css";
 
 function CardapioPage() {
     const [cardapio, setCardapio] = useState([{
@@ -15,22 +16,22 @@ function CardapioPage() {
     }, []);
 
     return (
-        <div className="categoriaComida">
+        <div className="comidas">
             {cardapio.map((categoria, i) => {
                 { console.log(categoria) }
                 return (
                     <div key={i}>
                         <h2>{categoria.categoria}</h2>
                         {categoria.itens.map((item, i) => {
-                            {console.log(item)}
+                            { console.log(item) }
                             return (
-                                <section key={i}>
-                                    <div className="item">
-                                        <img src={item.imagem} alt={item.nome} />
+                                <section key={i} className="item">
+                                    <img src={item.imagem} alt={item.nome} />
+                                    <section className="informacaoComida">
                                         <h3>{item.nome}</h3>
                                         <h4>{item.descricao}</h4>
                                         <span className="preco">{item.valor}</span>
-                                    </div>
+                                    </section>
                                 </section>
                             )
                         })}
