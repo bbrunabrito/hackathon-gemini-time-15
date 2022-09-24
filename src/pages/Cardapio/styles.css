@@ -1,0 +1,45 @@
+.comidas {
+    padding: 32px;
+}
+
+.item {
+    display: flex;
+    margin: 14px;
+    border-bottom: 1px solid #EFEFEF;
+    padding-bottom: 24px;
+}
+
+.item img {
+    width: 89px;
+    height: 89px;
+    border-radius: 5px;
+}
+
+.informacaoComida{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.item h3 {
+    font-size: 12px;
+    margin: 5px;
+    color: #828282;
+    font-weight: 700;
+    height: 14px;
+}
+
+.item h4 {
+    font-size: 10px;
+    margin: 5px;
+    color: #828282;
+    height: 23px;
+}
+
+.item span {
+    font-size: 12px;
+    text-align: end;
+    color: #828282;
+    font-weight: 700;
+    margin: 10px;
+}

@@ -7,4 +7,8 @@ export async function getDetalhes(id) {
   } catch (err) {
     throw err;
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> develop
