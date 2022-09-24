@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import RestauranteCard from "../../components/RestauranteCard";
 import "./style.css";
@@ -15,6 +16,7 @@ function RestaurantesPage() {
 
   // Pegar id da categoria específica
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
@@ -47,15 +49,17 @@ function RestaurantesPage() {
       ) : null}
 
       {restaurantesBaratinho?.map((restaurante) => (
-        <RestauranteCard
-          key={restaurante.id}
-          titulo={restaurante.nome}
-          imagem={restaurante.imagem}
-          distancia={restaurante.distancia}
-          nota={restaurante.nota}
-          tempo={restaurante.tempo_medio}
-          valor={restaurante.valor_entrega}
-        />
+        <Link to={`/cardapio/${restaurante.id}`}>
+          <RestauranteCard
+            key={restaurante.id}
+            titulo={restaurante.nome}
+            imagem={restaurante.imagem}
+            distancia={restaurante.distancia}
+            nota={restaurante.nota}
+            tempo={restaurante.tempo_medio}
+            valor={restaurante.valor_entrega}
+          />
+        </Link>
       ))}
 
       {restaurantesNoPreco ? (
@@ -67,15 +71,17 @@ function RestaurantesPage() {
       ) : null}
 
       {restaurantesNoPreco?.map((restaurante) => (
-        <RestauranteCard
-          key={restaurante.id}
-          titulo={restaurante.nome}
-          imagem={restaurante.imagem}
-          distancia={restaurante.distancia}
-          nota={restaurante.nota}
-          tempo={restaurante.tempo_medio}
-          valor={restaurante.valor_entrega}
-        />
+        <Link to={`/cardapio/${restaurante.id}`}>
+          <RestauranteCard
+            key={restaurante.id}
+            titulo={restaurante.nome}
+            imagem={restaurante.imagem}
+            distancia={restaurante.distancia}
+            nota={restaurante.nota}
+            tempo={restaurante.tempo_medio}
+            valor={restaurante.valor_entrega}
+          />
+        </Link>
       ))}
 
       {restaurantesCaro ? (
@@ -87,15 +93,17 @@ function RestaurantesPage() {
       ) : null}
 
       {restaurantesCaro?.map((restaurante) => (
-        <RestauranteCard
-          key={restaurante.id}
-          titulo={restaurante.nome}
-          imagem={restaurante.imagem}
-          distancia={restaurante.distancia}
-          nota={restaurante.nota}
-          tempo={restaurante.tempo_medio}
-          valor={restaurante.valor_entrega}
-        />
+        <Link to={`/cardapio/${restaurante.id}`}>
+          <RestauranteCard
+            key={restaurante.id}
+            titulo={restaurante.nome}
+            imagem={restaurante.imagem}
+            distancia={restaurante.distancia}
+            nota={restaurante.nota}
+            tempo={restaurante.tempo_medio}
+            valor={restaurante.valor_entrega}
+          />
+        </Link>
       ))}
     </Container>
   );
