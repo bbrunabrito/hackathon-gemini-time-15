@@ -13,18 +13,30 @@ function CardapioPage() {
             setCardapio(data.cardapio);
         });
     }, []);
-    
+
     return (
         <div className="categoriaComida">
-            <h2>{cardapio[0].categoria}</h2>
-            <section>
-                <div className="item">
-                    <img src={cardapio[0].itens[0].imagem} alt={cardapio[0].itens[0].nome} />
-                    <h3>{cardapio[0].itens[0].nome}</h3>
-                    <h4>{cardapio[0].itens[0].descricao}</h4>
-                    <span className="preco">{cardapio[0].itens[0].valor}</span>
-                </div>
-            </section>
+            {cardapio.map((categoria, i) => {
+                { console.log(categoria) }
+                return (
+                    <div key={i}>
+                        <h2>{categoria.categoria}</h2>
+                        {categoria.itens.map((item, i) => {
+                            {console.log(item)}
+                            return (
+                                <section key={i}>
+                                    <div className="item">
+                                        <img src={item.imagem} alt={item.nome} />
+                                        <h3>{item.nome}</h3>
+                                        <h4>{item.descricao}</h4>
+                                        <span className="preco">{item.valor}</span>
+                                    </div>
+                                </section>
+                            )
+                        })}
+                    </div>
+                )
+            })}
         </div>
     )
 }
