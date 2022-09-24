@@ -45,7 +45,7 @@ function Header() {
             <span>iterisFood</span>
           </div>
 
-          <IconButton color="inherit" onClick={handleClick} edge="start">
+          <IconButton color="inherit" edge="start">
             <AccountCircle fontSize="large" />
           </IconButton>
         </Toolbar>
