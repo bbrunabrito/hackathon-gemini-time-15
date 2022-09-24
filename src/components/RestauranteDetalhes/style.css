@@ -1,0 +1,50 @@
+
+ .principal-info {
+     display: flex;
+     flex-direction: row;
+ }
+ 
+ .principal-info img {
+     width: 92px;
+     height: 92px;
+     margin-right: 10px;
+ }
+ 
+ .resume-info {
+     line-height: 14px;
+     font-size: 12px;
+     font-family: 'Ubuntu';
+     color: #828282;
+ }
+ 
+ .resume-info .name {
+     font-weight: 700;
+ 
+ }
+ 
+ .resume-info .dist,
+ .rating,
+ .time 
+ {
+     font-weight: 400;
+ }
+ 
+ .resume-info .rating {
+     color: #ED6E27;
+ }
+ 
+ .description-field {
+     font-family: 'Ubuntu';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 12px;
+     line-height: 14px;
+ 
+     color: #828282;
+ 
+ }
+ 
+ .address {
+     font-weight: 700;
+ }
+ 

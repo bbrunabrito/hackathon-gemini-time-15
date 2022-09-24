@@ -14,7 +14,7 @@ function CardapioPage() {
             setCardapio(data.cardapio);
         });
     }, []);
-
+    
     return (
         <div className="comidas">
             {cardapio.map((categoria, i) => {

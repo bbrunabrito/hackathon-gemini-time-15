@@ -1,4 +1,11 @@
-import { AppBar, IconButton, Menu, MenuItem, Toolbar, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { useState } from "react";
@@ -33,23 +40,16 @@ function Header() {
             MenuListProps={{ disablePadding: true }}
             className="paper"
           >
-            <Link to="/" className="linkMenu">
-              <MenuItem onClick={handleClose} className="menu">
-                <Typography variant="h6">
-                  Início
-                </Typography>  
-              </MenuItem>
-            </Link>
             <Link to="/categorias" className="linkMenu">
               <MenuItem onClick={handleClose} className="menu">
-                <Typography variant="h6">
-                  Busca por restaurantes  
-                </Typography>
+                <Typography variant="h6">Busca por restaurantes</Typography>
               </MenuItem>
             </Link>
           </Menu>
           <div className="logo">
-            <span>iterisFood</span>
+            <Link to="/" className="iterisFoodLogo">
+              <span>iterisFood</span>
+            </Link>
           </div>
 
           <IconButton color="inherit" onClick={handleClick} edge="start">
