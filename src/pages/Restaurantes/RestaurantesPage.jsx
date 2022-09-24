@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import RestauranteCard from "../../components/RestauranteCard";
 import "./style.css";
