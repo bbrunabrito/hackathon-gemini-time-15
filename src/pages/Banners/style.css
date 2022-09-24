@@ -15,12 +15,13 @@
 
 .full-height .MuiTypography-h5 {
   width: 50%;
+  font-size: 36px;
 }
 
 .full-height .subtitle {
   padding-bottom: 14px;
   min-height: 62px;
-  max-width: 20px;
+  font-size: 18px;
 }
 
 .full-height .descricao {
