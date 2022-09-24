@@ -18,7 +18,6 @@ function RestaurantesPage() {
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
-      console.log(response);
       setNomeCategoria(response.categoria);
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
@@ -39,46 +38,64 @@ function RestaurantesPage() {
         </div>
       )}
 
-      <div className="sub-header">
-        <Typography variant="body1" color="primary">
-          Baratinho <span>(</span>$ <span>$ $ $ $)</span>
-        </Typography>
-      </div>
+      {restaurantesBaratinho ? (
+        <div className="sub-header">
+          <Typography variant="body1" color="primary">
+            Baratinho <span>(</span>$ <span>$ $ $ $)</span>
+          </Typography>
+        </div>
+      ) : null}
+
       {restaurantesBaratinho?.map((restaurante) => (
-        <>
-          {/* <div key={restaurante.id}>{restaurante.nome}</div> */}
-          <RestauranteCard
-            key={restaurante.id}
-            titulo={restaurante.nome}
-            imagem={restaurante.imagem}
-            distancia={restaurante.distancia}
-            nota={restaurante.nota}
-            tempo={restaurante.tempo_medio}
-            valor={restaurante.valor_entrega}
-          />
-        </>
+        <RestauranteCard
+          key={restaurante.id}
+          titulo={restaurante.nome}
+          imagem={restaurante.imagem}
+          distancia={restaurante.distancia}
+          nota={restaurante.nota}
+          tempo={restaurante.tempo_medio}
+          valor={restaurante.valor_entrega}
+        />
       ))}
 
-      <br />
-      <div className="sub-header">
-        <Typography variant="body1" color="primary">
-          No preço <span>(</span>$ <span>$ $ $ $)</span>
-        </Typography>
-      </div>
+      {restaurantesNoPreco ? (
+        <div className="sub-header">
+          <Typography variant="body1" color="primary">
+            No preço <span>(</span>$ $ $ <span> $ $)</span>
+          </Typography>
+        </div>
+      ) : null}
 
       {restaurantesNoPreco?.map((restaurante) => (
-        <div key={restaurante.id}>{restaurante.nome}</div>
+        <RestauranteCard
+          key={restaurante.id}
+          titulo={restaurante.nome}
+          imagem={restaurante.imagem}
+          distancia={restaurante.distancia}
+          nota={restaurante.nota}
+          tempo={restaurante.tempo_medio}
+          valor={restaurante.valor_entrega}
+        />
       ))}
 
-      <br />
-      <div className="sub-header">
-        <Typography variant="body1" color="primary">
-          Caro, mas vale a pena <span>(</span>$ <span>$ $ $ $)</span>
-        </Typography>
-      </div>
+      {restaurantesCaro ? (
+        <div className="sub-header">
+          <Typography variant="body1" color="primary">
+            Caro, mas vale a pena <span>(</span>$ $ $ $ $ <span>)</span>
+          </Typography>
+        </div>
+      ) : null}
 
       {restaurantesCaro?.map((restaurante) => (
-        <div key={restaurante.id}>{restaurante.nome}</div>
+        <RestauranteCard
+          key={restaurante.id}
+          titulo={restaurante.nome}
+          imagem={restaurante.imagem}
+          distancia={restaurante.distancia}
+          nota={restaurante.nota}
+          tempo={restaurante.tempo_medio}
+          valor={restaurante.valor_entrega}
+        />
       ))}
     </Container>
   );
