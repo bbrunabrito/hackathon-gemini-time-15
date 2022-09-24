@@ -34,27 +34,27 @@ function CategoriasPage() {
           <CircularProgress color="primary" />
         </div>
       )}
+      
+			<Grid container spacing={1} className="gridContainer">
+				{categorias.map((categoria) => (
+					<Grid item xs={4} key={categoria.id}>
+						<div
+							className="containerCategorias"
+							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
+						>
+							<img
+								className="imgCategory"
+								src={categoria.image}
+								alt={categoria.name}
+							/>
 
-      <Grid container spacing={1} className="gridContainer">
-        {categorias.map((categoria) => (
-          <Grid item xs={4} key={categoria.id}>
-            <div
-              className="containerCategorias"
-              onClick={() => navigate(`/restaurantes/${categoria.id}`)}
-            >
-              <img
-                src={categoria.imagem}
-                alt={categoria.nome}
-                className="imgCategory"
-              />
-
-              <Typography className="textNames">{categoria.nome}</Typography>
-            </div>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
-  );
+							<Typography className="textNames">{categoria.name}</Typography>
+						</div>
+					</Grid>
+				))}
+			</Grid>
+		</Container>
+	);
 }
 
 export default CategoriasPage;
