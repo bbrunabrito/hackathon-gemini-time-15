@@ -43,12 +43,12 @@ function CategoriasPage() {
 							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
 						>
 							<img
-								src={categoria.imagem}
-								alt={categoria.nome}
 								className="imgCategory"
+								src={categoria.image}
+								alt={categoria.name}
 							/>
 
-							<Typography className="textNames">{categoria.nome}</Typography>
+							<Typography className="textNames">{categoria.name}</Typography>
 						</div>
 					</Grid>
 				))}
