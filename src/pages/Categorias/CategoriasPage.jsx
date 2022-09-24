@@ -21,8 +21,6 @@ function CategoriasPage() {
     setLoading(false);
   };
 
-  console.log(categorias);
-
   useEffect(() => {
     getCategorias();
   }, []);
